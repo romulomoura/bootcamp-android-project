@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVC Base Project</string>
+    <string name="hello_this_is_another_class">Hello this is another class</string>
+</resources>
