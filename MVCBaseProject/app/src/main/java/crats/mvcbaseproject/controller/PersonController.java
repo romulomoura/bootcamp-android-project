@@ -1,4 +1,4 @@
-package crats.mvcbaseproject;
+package crats.mvcbaseproject.controller;
 
 import android.content.Context;
 import android.util.Log;
@@ -14,6 +14,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import crats.mvcbaseproject.model.Person;
 
 import static com.android.volley.toolbox.Volley.newRequestQueue;
 

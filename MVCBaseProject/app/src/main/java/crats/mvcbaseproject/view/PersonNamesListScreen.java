@@ -1,12 +1,10 @@
-package crats.mvcbaseproject;
+package crats.mvcbaseproject.view;
 
-import android.app.ActionBar;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.SupportActionModeWrapper;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +14,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import crats.mvcbaseproject.R;
+import crats.mvcbaseproject.controller.IPersonController;
+import crats.mvcbaseproject.controller.PersonController;
+import crats.mvcbaseproject.model.Person;
 
 public class PersonNamesListScreen extends AppCompatActivity implements AdapterView.OnItemClickListener,IPersonController {
 
