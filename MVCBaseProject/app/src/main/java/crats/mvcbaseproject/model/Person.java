@@ -1,4 +1,4 @@
-package crats.mvcbaseproject;
+package crats.mvcbaseproject.model;
 
 /**
  * Created by Victor on 2017-11-08.

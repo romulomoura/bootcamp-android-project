@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProjectLists"
+        <activity android:name=".view.ProjectLists"
             android:label="Projects">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PersonNamesListScreen"
+        <activity android:name=".view.PersonNamesListScreen"
             android:label="Example"
-            android:parentActivityName=".ProjectLists">
+            android:parentActivityName=".view.ProjectLists">
         </activity>
     </application>
 

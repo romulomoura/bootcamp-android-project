@@ -1,4 +1,4 @@
-package crats.mvcbaseproject;
+package crats.mvcbaseproject.view;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +11,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import crats.mvcbaseproject.R;
+import crats.mvcbaseproject.view.PersonNamesListScreen;
 
 public class ProjectLists extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
