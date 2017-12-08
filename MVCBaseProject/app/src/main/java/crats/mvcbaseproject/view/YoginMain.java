@@ -29,6 +29,7 @@ public class YoginMain extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private Button login;
+    private Button signout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class YoginMain extends AppCompatActivity {
         email = (EditText) findViewById(R.id.emailEd);
         password = (EditText) findViewById(R.id.passwordEd);
         login = (Button) findViewById(R.id.login);
+        signout = (Button) findViewById(R.id.signOutId);
 
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -83,7 +85,13 @@ login.setOnClickListener(new View.OnClickListener() {
     }
 });
 
-
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                Toast.makeText(YoginMain.this, "Signed out successfully ", Toast.LENGTH_LONG).show();
+            }
+        });
     }
     @Override
     protected void onStart() {
