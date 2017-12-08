@@ -38,7 +38,8 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
             public View getView(int position, View convertView, ViewGroup parent) {
                 TextView textView = (TextView) super.getView(position, convertView, parent);
                 textView.setTextColor(Color.BLACK);
-                textView.setGravity(Gravity.CENTER);return textView;
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         };
         projectlistView.setOnItemClickListener(this);
@@ -54,6 +55,10 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
             case 0:
                 Intent intent = new Intent(this, PersonNamesListScreen.class);
                 startActivity(intent);
+                break;
+            case 1:
+                Intent intentyash = new Intent(this, YashMainActivity.class);
+                startActivity(intentyash);
                 break;
             default:
                 setContentView(R.layout.project_lists);
