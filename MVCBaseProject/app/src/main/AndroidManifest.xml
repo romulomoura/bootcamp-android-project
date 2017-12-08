@@ -25,6 +25,10 @@
             android:label="Example"
             android:parentActivityName=".view.ProjectLists">
         </activity>
+        <activity android:name=".view.YoginMain">
+        </activity>
+
+
     </application>
 
 </manifest>

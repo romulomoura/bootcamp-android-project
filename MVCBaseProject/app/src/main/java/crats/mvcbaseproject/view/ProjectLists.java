@@ -55,6 +55,10 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
                 Intent intent = new Intent(this, PersonNamesListScreen.class);
                 startActivity(intent);
                 break;
+            case 1 :
+                Intent intent1 = new Intent(this,YoginMain.class);
+                startActivity(intent1);
+                break;
             default:
                 setContentView(R.layout.project_lists);
         }
