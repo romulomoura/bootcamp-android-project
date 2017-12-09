@@ -31,6 +31,8 @@
 
         <activity android:name=".view.YashMainActivity">
         </activity>
+        <activity android:name=".view.Login">
+        </activity>
 
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode" />
 

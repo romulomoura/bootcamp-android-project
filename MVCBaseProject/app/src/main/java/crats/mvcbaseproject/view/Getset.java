@@ -8,17 +8,31 @@ import java.io.Serializable;
 
 public class Getset implements Serializable {
 
-    public String name;
-    public String age;
 
-    public void setName(String name)
+    public String email;
+    public String review;
+    public String productName;
+    public String qrcode;
+
+    public void setReview(String review)
     {
-        this.name = name;
+        this.review = review;
     }
 
-    public void setAge(String age)
+    public void setProductName(String productName)
     {
-        this.age = age;
+        this.productName = productName;
+    }
+
+    public void setQrcode(String qrcode)
+    {
+        this.qrcode = qrcode;
+    }
+
+
+    public void setEmail(String email)
+    {
+        this.email = email;
     }
 
 

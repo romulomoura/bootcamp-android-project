@@ -35,12 +35,13 @@ import crats.mvcbaseproject.R;
 
 public class YashMainActivity extends AppCompatActivity {
 
-    EditText name, age;
+    EditText review,productname;
     Button submit;
     SurfaceView cameraPreview;
     TextView txtResult;
     BarcodeDetector barcodeDetector;
     CameraSource cameraSource;
+    String email;
 
     final int RequestCamerePermissionID = 1001;
 
@@ -71,15 +72,16 @@ public class YashMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.yashmainactivity);
 
-
-        name = (EditText) findViewById(R.id.editText1);
-        age = (EditText) findViewById(R.id.editText2);
+        productname = (EditText)findViewById(R.id.productname);
+        review = (EditText) findViewById(R.id.review);
         submit = (Button) findViewById(R.id.submit);
         cameraPreview = (SurfaceView) findViewById(R.id.surfaceView);
         txtResult = (TextView) findViewById(R.id.textView3);
 
-
-        barcodeDetector = new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
+        //Bundle bundle = getIntent().getExtras();
+        //email = bundle.getString("email");
+        barcodeDetector = new BarcodeDetector.Builder(this).build();
+       // barcodeDetector = new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
 
         cameraSource = new CameraSource.Builder(this, barcodeDetector).setRequestedPreviewSize(640, 480).build();
 
@@ -130,6 +132,7 @@ public class YashMainActivity extends AppCompatActivity {
                             Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(1000);
                             txtResult.setText(qrcodes.valueAt(0).displayValue);
+                            cameraSource.stop();
                         }
                     });
                 }
@@ -141,17 +144,19 @@ public class YashMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 Getset getset = new Getset();
 
-                getset.setName(name.getText().toString());
-                getset.setAge(age.getText().toString());
+                getset.setQrcode(txtResult.getText().toString());
+                getset.setReview(review.getText().toString());
+                getset.setProductName(productname.getText().toString());
 
 
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference databaseReference = database.getReference();
                     databaseReference.child("primarydatabase").push().setValue(getset);
 
-                    Toast.makeText(getApplicationContext(), "This is my Toast message!",
+                    Toast.makeText(getApplicationContext(), "Review Submitted",
                             Toast.LENGTH_LONG).show();
 
 

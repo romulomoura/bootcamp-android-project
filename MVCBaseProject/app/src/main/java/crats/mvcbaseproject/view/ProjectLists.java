@@ -57,7 +57,7 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 1:
-                Intent intentyash = new Intent(this, YashMainActivity.class);
+                Intent intentyash = new Intent(this, Login.class);
                 startActivity(intentyash);
                 break;
             default:
