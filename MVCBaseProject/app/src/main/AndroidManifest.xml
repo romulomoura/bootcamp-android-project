@@ -33,6 +33,11 @@
         </activity>
         <activity android:name=".view.Login">
         </activity>
+        <activity android:name=".view.RetriveReview">
+        </activity>
+
+        <activity android:name=".view.ListView">
+        </activity>
 
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode" />
 
