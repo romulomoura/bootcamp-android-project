@@ -27,6 +27,7 @@
             android:label="Example"
             android:parentActivityName=".view.ProjectLists" />
         <activity android:name=".view.MovieListActivity" />
+        <activity android:name=".view.MovieDetailActivity"></activity>
     </application>
 
 </manifest>
