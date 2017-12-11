@@ -3,6 +3,7 @@ package crats.mvcbaseproject.view;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +29,7 @@ public class ListView extends AppCompatActivity {
     ArrayAdapter<String> myArrayAdapter;
     String total = "7613032850029";
 
+    TextView prname1;
 
 
     @Override
@@ -35,7 +37,7 @@ public class ListView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listviewactivity);
 
-
+        prname1 = (TextView)findViewById(R.id.prname);
         list_view = (android.widget.ListView)findViewById(R.id.listview2);
         myArrayAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, R.id.rowTextView, mListview);
         list_view.setAdapter(myArrayAdapter);
@@ -56,6 +58,9 @@ public class ListView extends AppCompatActivity {
             {
 
 
+
+
+
                 String myChildValues = "";
 
 
@@ -64,6 +69,9 @@ public class ListView extends AppCompatActivity {
                     myChildValues = snapshot.child("review").getValue(String.class);
                     mListview.add(myChildValues);
                     myArrayAdapter.notifyDataSetChanged();
+
+                    String prname = snapshot.child("productName").getValue(String.class);
+                    prname1.setText(prname);
                 }
 
             }

@@ -66,10 +66,10 @@ public class RetriveReview extends AppCompatActivity
 
 
 
-        listView = (ListView)findViewById(R.id.listview);
-        b1 = (Button)findViewById(R.id.button2);
+        //listView = (ListView)findViewById(R.id.listview);
+        //b1 = (Button)findViewById(R.id.button2);
         myArrayAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, R.id.rowTextView, mListview);
-        listView.setAdapter(myArrayAdapter);
+//        listView.setAdapter(myArrayAdapter);
 
         cameraPreview7 = (SurfaceView) findViewById(R.id.surfaceView2);
         txtResult7 = (TextView) findViewById(R.id.textView7);
@@ -140,17 +140,7 @@ public class RetriveReview extends AppCompatActivity
         });
 
 
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Button Clicked",
-                        Toast.LENGTH_LONG).show();
 
-
-
-
-            }
-        });
 
 
 
