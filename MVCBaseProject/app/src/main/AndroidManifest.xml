@@ -26,7 +26,7 @@
             android:name=".view.PersonNamesListScreen"
             android:label="Example"
             android:parentActivityName=".view.ProjectLists"></activity>
-        <activity android:name=".view.AnthonyActivity"></activity>
+        <activity android:name=".view.MovieListActivity"></activity>
     </application>
 
 </manifest>

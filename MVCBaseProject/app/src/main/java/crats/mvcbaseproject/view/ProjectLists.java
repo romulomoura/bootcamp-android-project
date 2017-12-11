@@ -13,7 +13,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import crats.mvcbaseproject.R;
-import crats.mvcbaseproject.view.PersonNamesListScreen;
 
 public class ProjectLists extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
@@ -56,7 +55,7 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 1:
-                intent = new Intent(this, AnthonyActivity.class);
+                intent = new Intent(this, MovieListActivity.class);
                 startActivity(intent);
                 break;
             default:

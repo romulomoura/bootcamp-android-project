@@ -7,12 +7,12 @@ import android.widget.Button;
 
 import crats.mvcbaseproject.R;
 
-public class AnthonyActivity extends AppCompatActivity {
+public class MovieListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anthony);
+        setContentView(R.layout.activity_movie_list);
         Button btn = (Button) findViewById(R.id.btn);
 
 //        btn.bind("<Button>")
