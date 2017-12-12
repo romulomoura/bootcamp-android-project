@@ -14,6 +14,7 @@ import crats.mvcbaseproject.R;
 import crats.mvcbaseproject.controller.IMovieController;
 import crats.mvcbaseproject.controller.MovieController;
 import crats.mvcbaseproject.model.Movie;
+import crats.mvcbaseproject.model.MovieAdapter;
 
 public class MovieListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, IMovieController{
     ListView movieListView;
@@ -28,9 +29,10 @@ public class MovieListActivity extends AppCompatActivity implements AdapterView.
         movieListView = (ListView) findViewById(R.id.movieoptionsListView);
 
         MovieController.shared().setupMovieController(this, getBaseContext());
+        MovieController.shared().fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=fc5fcd256800192941231337ea025422");
     }
     private void setupListView() {
-        ArrayAdapter<Movie> adapter = new ArrayAdapter<Movie>(this,R.layout.listview_movie_detail, moviesList);
+        MovieAdapter adapter = new MovieAdapter(this,moviesList);
         movieListView.setOnItemClickListener(this);
         movieListView.setAdapter(adapter);
     }

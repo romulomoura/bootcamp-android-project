@@ -40,4 +40,12 @@ public class Movie {
     public String getPoster_path() {
         return poster_path;
     }
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
 }
