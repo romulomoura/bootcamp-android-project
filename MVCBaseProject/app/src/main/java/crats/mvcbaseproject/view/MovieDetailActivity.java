@@ -3,6 +3,8 @@ package crats.mvcbaseproject.view;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import crats.mvcbaseproject.R;
+
 public class MovieDetailActivity extends AppCompatActivity {
 
     @Override
