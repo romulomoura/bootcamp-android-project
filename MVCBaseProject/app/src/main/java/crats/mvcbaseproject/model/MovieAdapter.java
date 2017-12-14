@@ -24,6 +24,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import crats.mvcbaseproject.R;
+import crats.mvcbaseproject.view.MovieDetailActivity;
 
 /**
  * Created by antho on 12/11/2017.
@@ -79,14 +80,14 @@ public class MovieAdapter extends BaseAdapter {
 
         new DownloadImageTask((ImageView) rowView.findViewById(R.id.movieposterImageView)).execute(imageUrl);
 
-//        rowView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(context,AccountDetailActivity.class);
-//                intent.putExtra("AccountID", holder.account.getID());
-//                context.startActivityForResult(intent, 2);
-//            }
-//        });
+        rowView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,MovieDetailActivity.class);
+                intent.putExtra("AccountID", holder.movie.getId());
+                context.startActivityForResult(intent, 2);
+            }
+        });
         return rowView;
     }
 
