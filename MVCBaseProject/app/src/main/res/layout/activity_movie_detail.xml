@@ -18,7 +18,7 @@
         <LinearLayout
             android:id="@+id/linearlayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:overScrollMode="always"
             android:padding="16dp">
@@ -28,42 +28,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Movie Title"
-                android:textSize="24dp"
+                android:textSize="32dp"
                 android:textStyle="bold" />
 
-            <LinearLayout
+
+            <ImageView
+                android:id="@+id/movieImageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="8dp"
-                android:paddingTop="8dp">
+                android:layout_height="200dp"
+                android:minHeight="200dp"
+                app:srcCompat="@mipmap/ic_launcher" />
 
-                <ImageView
-                    android:id="@+id/movieImageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_weight="3"
-                    android:minHeight="200dp"
-                    app:srcCompat="@mipmap/ic_launcher" />
 
-                <TextView
-                    android:id="@+id/moviedescriptionTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:padding="8dp"
-                    android:text="Movie Description:"
-                    android:textSize="18dp" />
-            </LinearLayout>
 
             <TextView
-                android:id="@+id/label"
+                android:id="@+id/moviereleasedateTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Movie Title"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-
+                android:text="Release Date"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/moviegenreTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Genre"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/moviecompanyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Company"
+                android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/moviedescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Movie Description:"
+                android:textSize="18dp" />
 
         </LinearLayout>
 

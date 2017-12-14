@@ -27,10 +27,6 @@ public class Movie {
         return title;
     }
 
-    public String getWebsite() {
-        return website;
-    }
-
     public String getPoster_path() {
         return poster_path;
     }
@@ -41,5 +37,13 @@ public class Movie {
 
     public String getOverview() {
         return overview;
+    }
+
+    public ArrayList<String> getGenres() {
+        return genres;
+    }
+
+    public ArrayList<String> getCompanies() {
+        return companies;
     }
 }
