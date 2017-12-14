@@ -26,10 +26,6 @@ import java.util.ArrayList;
 import crats.mvcbaseproject.R;
 import crats.mvcbaseproject.view.MovieDetailActivity;
 
-/**
- * Created by antho on 12/11/2017.
- */
-
 public class MovieAdapter extends BaseAdapter {
     private final Activity context;
     private final ArrayList<Movie> movies;
