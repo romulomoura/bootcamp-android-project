@@ -19,7 +19,7 @@ import crats.mvcbaseproject.model.MovieAdapter;
 public class MovieListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, IMovieController{
     ListView movieListView;
     ArrayList<Movie> moviesList = new ArrayList<Movie>();
-
+    String API_KEY;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +27,9 @@ public class MovieListActivity extends AppCompatActivity implements AdapterView.
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         movieListView = (ListView) findViewById(R.id.movieoptionsListView);
-
+        API_KEY = MovieController.shared().getAPI_KEY();
         MovieController.shared().setupMovieController(this, getBaseContext());
-        MovieController.shared().fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=fc5fcd256800192941231337ea025422");
+        MovieController.shared().fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=" + API_KEY);
     }
     private void setupListView() {
         MovieAdapter adapter = new MovieAdapter(this,moviesList);
@@ -56,5 +56,11 @@ public class MovieListActivity extends AppCompatActivity implements AdapterView.
     @Override
     public void fetchFailure(String errorMessage) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

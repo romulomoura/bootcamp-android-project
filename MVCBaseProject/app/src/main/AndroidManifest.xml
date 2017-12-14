@@ -26,8 +26,12 @@
             android:name=".view.PersonNamesListScreen"
             android:label="Example"
             android:parentActivityName=".view.ProjectLists" />
-        <activity android:name=".view.MovieListActivity" />
-        <activity android:name=".view.MovieDetailActivity"></activity>
+        <activity android:name=".view.MovieListActivity"
+            android:parentActivityName=".view.ProjectLists"/>
+        <activity android:name=".view.MovieDetailActivity"
+            android:parentActivityName=".view.MovieListActivity">
+
+        </activity>
     </application>
 
 </manifest>
