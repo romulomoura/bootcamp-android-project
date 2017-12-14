@@ -84,7 +84,7 @@ public class MovieAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context,MovieDetailActivity.class);
-                intent.putExtra("AccountID", holder.movie.getId());
+                intent.putExtra("MovieID", holder.movie.getId());
                 context.startActivityForResult(intent, 2);
             }
         });
