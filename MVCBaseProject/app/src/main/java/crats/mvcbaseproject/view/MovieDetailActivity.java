@@ -74,7 +74,7 @@ public class MovieDetailActivity extends AppCompatActivity implements IMovieCont
 
     @Override
     public void fetchFailure(String errorMessage) {
-
+        Log.e("fetchFailure", errorMessage);
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {

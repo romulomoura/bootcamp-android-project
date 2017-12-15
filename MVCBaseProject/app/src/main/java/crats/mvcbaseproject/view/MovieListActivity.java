@@ -2,6 +2,9 @@ package crats.mvcbaseproject.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -51,7 +54,6 @@ public class MovieListActivity extends AppCompatActivity implements IMovieContro
                         break;
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -80,7 +82,7 @@ public class MovieListActivity extends AppCompatActivity implements IMovieContro
 
     @Override
     public void fetchFailure(String errorMessage) {
-
+        Log.e("fetchFailure", errorMessage);
     }
 
     @Override
@@ -91,6 +93,28 @@ public class MovieListActivity extends AppCompatActivity implements IMovieContro
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.about:
+                showAboutDialog();
+                return true;
+            case R.id.help:
+                showHelpDialog();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void showAboutDialog() {
+    }
+
+    private void showHelpDialog() {
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.movie_menu, menu);
+        return true;
     }
 }
