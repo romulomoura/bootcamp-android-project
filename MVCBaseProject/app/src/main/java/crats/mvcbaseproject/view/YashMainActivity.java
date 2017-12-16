@@ -3,6 +3,7 @@ package crats.mvcbaseproject.view;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -72,9 +73,9 @@ public class YashMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.yashmainactivity);
 
-        productname = (EditText)findViewById(R.id.productname);
-        review = (EditText) findViewById(R.id.review);
-        submit = (Button) findViewById(R.id.submit);
+       // productname = (EditText)findViewById(R.id.productname);
+       // review = (EditText) findViewById(R.id.review);
+       // submit = (Button) findViewById(R.id.submit);
         cameraPreview = (SurfaceView) findViewById(R.id.surfaceView);
         txtResult = (TextView) findViewById(R.id.textView3);
 
@@ -83,7 +84,9 @@ public class YashMainActivity extends AppCompatActivity {
         barcodeDetector = new BarcodeDetector.Builder(this).build();
        // barcodeDetector = new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
 
-        cameraSource = new CameraSource.Builder(this, barcodeDetector).setRequestedPreviewSize(640, 480).build();
+      //  cameraSource = new CameraSource.Builder(this, barcodeDetector).setRequestedPreviewSize(640, 480).build();
+
+        cameraSource = new CameraSource.Builder(this, barcodeDetector).setRequestedPreviewSize(1080,880).build();
 
         cameraPreview.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
@@ -133,6 +136,12 @@ public class YashMainActivity extends AppCompatActivity {
                             vibrator.vibrate(1000);
                             txtResult.setText(qrcodes.valueAt(0).displayValue);
                             cameraSource.stop();
+                            Intent intentyash = new Intent(YashMainActivity.this, YashGiveReview.class);
+                            Bundle extras = new Bundle();
+                            extras.putString("qrcode",qrcodes.valueAt(0).displayValue);
+                            intentyash.putExtras(extras);
+
+                            startActivity(intentyash);
                         }
                     });
                 }
@@ -140,7 +149,7 @@ public class YashMainActivity extends AppCompatActivity {
         });
 
 
-        submit.setOnClickListener(new View.OnClickListener() {
+       /* submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -167,7 +176,7 @@ public class YashMainActivity extends AppCompatActivity {
             }
 
 
-        });
+        });*/
 
 
 

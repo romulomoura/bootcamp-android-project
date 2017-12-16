@@ -74,7 +74,7 @@ public class RetriveReview extends AppCompatActivity
         cameraPreview7 = (SurfaceView) findViewById(R.id.surfaceView2);
         txtResult7 = (TextView) findViewById(R.id.textView7);
         barcodeDetector7 = new BarcodeDetector.Builder(this).build();
-        cameraSource7 = new CameraSource.Builder(this, barcodeDetector7).setRequestedPreviewSize(640, 480).build();
+        cameraSource7 = new CameraSource.Builder(this, barcodeDetector7).setRequestedPreviewSize(1080, 880).build();
 
         cameraPreview7.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override

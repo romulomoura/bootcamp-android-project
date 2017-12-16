@@ -27,7 +27,8 @@ public class ListView extends AppCompatActivity {
     private ArrayList<String> mListview = new ArrayList<String>();
 
     ArrayAdapter<String> myArrayAdapter;
-    String total = "7613032850029";
+
+    String total = "";
 
     TextView prname1;
 
@@ -37,10 +38,16 @@ public class ListView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listviewactivity);
 
+
+
         prname1 = (TextView)findViewById(R.id.prname);
         list_view = (android.widget.ListView)findViewById(R.id.listview2);
-        myArrayAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, R.id.rowTextView, mListview);
+        myArrayAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, R.id.rowTextView,mListview);
+
         list_view.setAdapter(myArrayAdapter);
+
+
+
 
         Bundle sum = getIntent().getExtras();
         total = sum.getString("qrcode");

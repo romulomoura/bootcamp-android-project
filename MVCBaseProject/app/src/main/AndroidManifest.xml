@@ -39,6 +39,12 @@
         <activity android:name=".view.ListView">
         </activity>
 
+        <activity android:name=".view.FirstScreen">
+        </activity>
+
+        <activity android:name=".view.YashGiveReview">
+        </activity>
+
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode" />
 
     </application>
