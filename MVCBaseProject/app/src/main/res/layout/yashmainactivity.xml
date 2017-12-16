@@ -4,14 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cast_expanded_controller_background_color"><![CDATA[
+    android:background="@color/cast_expanded_controller_background_color">
 
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    ]]>
 
     <SurfaceView
         android:id="@+id/surfaceView"
