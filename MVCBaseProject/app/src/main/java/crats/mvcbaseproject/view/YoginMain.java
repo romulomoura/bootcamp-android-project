@@ -10,6 +10,7 @@ import com.google.firebase.auth.AuthResult;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.text.TextUtils;
+import android.content.Intent;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -64,11 +65,14 @@ public class YoginMain extends AppCompatActivity {
 
                 mUser = firebaseAuth.getCurrentUser();
 
-                if (mUser != null) {
+                if (mUser != null)
+                {
                     Toast.makeText(YoginMain.this, "Signed In", Toast.LENGTH_LONG).show();
-                //    startActivity(new Intent(YoginMain.this, PostListActivity.class));
+                    startActivity(new Intent(YoginMain.this, PostListActivity.class));
                     finish();
-                }else {
+                }
+                else
+                {
                     Toast.makeText(YoginMain.this, "Not Signed In", Toast.LENGTH_LONG).show();
                 }
 
@@ -114,7 +118,7 @@ public class YoginMain extends AppCompatActivity {
                             Toast.makeText(YoginMain.this, "Signed in", Toast.LENGTH_LONG)
                                     .show();
 
-                         //   startActivity(new Intent(YoginMain.this, PostListActivity.class));
+                           startActivity(new Intent(YoginMain.this, PostListActivity.class));
                             finish();
                         }else {
                             // Not it!
