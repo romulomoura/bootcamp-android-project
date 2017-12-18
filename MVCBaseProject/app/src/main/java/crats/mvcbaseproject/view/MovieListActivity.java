@@ -116,7 +116,7 @@ public class MovieListActivity extends AppCompatActivity implements IMovieContro
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         String github = "<a href='https://github.com/anthonys44'>https://github.com/anthonys44</a>";
         String linkedin = "<a href='https://www.linkedin.com/in/anthony-s44/'>https://www.linkedin.com/in/anthony-s44/</a>";
-        String message = "Name: Anthony<br/> Github Profile: " + github + "<br/> LinkedIn Profile: " + linkedin;
+        String message = "Name: Anthony<br/>Email: anthony.salim.123@gmail.com<br/> Github Profile: " + github + "<br/> LinkedIn Profile: " + linkedin;
         TextView textView = new TextView(this);
         int pixel = (int) (16 * Resources.getSystem().getDisplayMetrics().density);
         textView.setPadding(pixel,pixel,pixel,pixel);
