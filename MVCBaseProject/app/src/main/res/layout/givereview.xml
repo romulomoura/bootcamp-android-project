@@ -11,7 +11,6 @@
         android:id="@+id/submit"
         android:layout_width="388dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="44dp"
         android:background="@color/colorPrimaryDark"
         android:focusable="true"
         android:text="Submit Review"
@@ -24,36 +23,31 @@
         android:id="@+id/productname"
         android:layout_width="354dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="54dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="Enter Product Name"
         android:inputType="textPersonName"
         android:textColor="@color/wallet_bright_foreground_holo_dark"
         android:textColorHint="@color/wallet_bright_foreground_holo_dark"
-        app:layout_constraintBottom_toTopOf="@+id/review"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/review"
         android:layout_width="353dp"
         android:layout_height="106dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Enter Your Review..."
         android:inputType="textPersonName"
         android:textAlignment="viewStart"
         android:textColor="@color/wallet_bright_foreground_holo_dark"
         android:textColorHint="@color/wallet_bright_foreground_holo_dark"
-        app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productname" />
 
     <TextView
         android:id="@+id/textView2"
@@ -62,29 +56,52 @@
         android:layout_marginBottom="28dp"
         android:layout_marginEnd="139dp"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="74dp"
         android:text="Give Your Review"
         android:textColor="@color/wallet_bright_foreground_holo_dark"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/productname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
         style="@style/CustomProgressBarHorizontal"
         android:layout_width="388dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="44dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="245dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="41dp"
+        android:layout_marginTop="52dp"
+        android:background="@color/cast_expanded_controller_progress_text_color"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/review" />
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="97dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="20dp"
+        android:text="Rating:"
+        android:textColor="@color/wallet_bright_foreground_holo_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toStartOf="@+id/ratingbar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review"
+        app:layout_constraintVertical_bias="0.585" />
 
 
 </android.support.constraint.ConstraintLayout>

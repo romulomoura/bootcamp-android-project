@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +25,7 @@ import crats.mvcbaseproject.R;
 public class YashGiveReview extends AppCompatActivity {
     EditText review,productname;
     Button submit;
+    RatingBar ratingBar;
 
     ProgressBar progressBar;
     String qrcode = "";
@@ -42,16 +44,27 @@ public class YashGiveReview extends AppCompatActivity {
         review = (EditText) findViewById(R.id.review);
         submit = (Button) findViewById(R.id.submit);
         progressBar = (ProgressBar)findViewById(R.id.progressBar2);
+        ratingBar = (RatingBar)findViewById(R.id.ratingbar);
 
 
         Bundle sum = getIntent().getExtras();
         qrcode = sum.getString("qrcode");
 
-        submit.setOnClickListener(new View.OnClickListener()
+
+
+            submit.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
+
+                int a  = ratingBar.getProgress();
+                System.out.println(a);
+
+
+
+                //ratingBar.setProgress(3);
+
 
                 String getEditText = productname.getText().toString();
                 String getEdiText1 = review.getText().toString();
@@ -99,12 +112,14 @@ public class YashGiveReview extends AppCompatActivity {
                         }
                     }).start();
 
+                    String b = String.valueOf(a);
 
                     Getset getset = new Getset();
 
                     getset.setQrcode(qrcode);
                     getset.setReview(review.getText().toString());
                     getset.setProductName(productname.getText().toString());
+                    getset.setProgress(b);
 
 
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -127,4 +142,6 @@ public class YashGiveReview extends AppCompatActivity {
 
 
     }
-}
+
+
+    }

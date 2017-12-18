@@ -3,6 +3,7 @@ package crats.mvcbaseproject.view;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +34,8 @@ public class ListView extends AppCompatActivity {
 
     TextView prname1;
 
+    RatingBar ratingBar1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class ListView extends AppCompatActivity {
         prname1 = (TextView)findViewById(R.id.prname);
         list_view = (android.widget.ListView)findViewById(R.id.listview2);
         myArrayAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, R.id.rowTextView,mListview);
+        ratingBar1 = (RatingBar)findViewById(R.id.ratingBar1);
 
         list_view.setAdapter(myArrayAdapter);
 
@@ -72,17 +76,27 @@ public class ListView extends AppCompatActivity {
 
 
                 String myChildValues = "";
-
-
+                int a = 0;
+                int count = 1;
                 for(DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
                     myChildValues = snapshot.child("review").getValue(String.class);
                     mListview.add(myChildValues);
                     myArrayAdapter.notifyDataSetChanged();
 
+                    String progress = snapshot.child("progress").getValue(String.class);
+                    int b = Integer.parseInt(progress);
+                    a = a + b;
+                    count++;
                     String prname = snapshot.child("productName").getValue(String.class);
                     prname1.setText(prname);
                 }
+
+                int c = a/count;
+
+                ratingBar1.setProgress(c);
+
+
 
             }
 

@@ -13,6 +13,7 @@ public class Getset implements Serializable {
     public String review;
     public String productName;
     public String qrcode;
+    public String progress;
 
     public void setReview(String review)
     {
@@ -34,6 +35,8 @@ public class Getset implements Serializable {
     {
         this.email = email;
     }
+
+    public void setProgress(String progress){this.progress = progress;}
 
 
 }
