@@ -1,7 +1,13 @@
 package crats.mvcbaseproject.view;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -106,9 +113,41 @@ public class MovieListActivity extends AppCompatActivity implements IMovieContro
     }
 
     private void showAboutDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        String github = "<a href='https://github.com/anthonys44'>https://github.com/anthonys44</a>";
+        String linkedin = "<a href='https://www.linkedin.com/in/anthony-s44/'>https://www.linkedin.com/in/anthony-s44/</a>";
+        String message = "Name: Anthony<br/> Github Profile: " + github + "<br/> LinkedIn Profile: " + linkedin;
+        TextView textView = new TextView(this);
+        int pixel = (int) (16 * Resources.getSystem().getDisplayMetrics().density);
+        textView.setPadding(pixel,pixel,pixel,pixel);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        textView.setText(Html.fromHtml(message));
+        builder.setTitle("About")
+                .setView(textView)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void showHelpDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Help")
+                .setMessage("This application is used to view movie information.\n\n" +
+                        "You can choose options to view movies that are top rated, now playing or upcoming movies.\n\n" +
+                        "Clicking on one of the movie will show you more details about the movie")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     @Override

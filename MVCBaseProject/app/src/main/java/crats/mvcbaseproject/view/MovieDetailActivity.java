@@ -61,6 +61,7 @@ public class MovieDetailActivity extends AppCompatActivity implements IMovieCont
         this.moviesList = MovieController.shared().getMoviesList();
         for (Movie movie: this.moviesList) {
             if (movie.getId() == id) {
+                getSupportActionBar().setTitle(movie.getTitle());
                 title.setText(movie.getTitle());
                 release_date.setText("Release Date: " + movie.getRelease_date());
                 description.setText("Description:\n" + movie.getOverview());

@@ -5,8 +5,10 @@
         android:id="@+id/help"
         android:icon="@android:drawable/ic_menu_help"
         android:title="Help"
-        app:showAsAction="ifRoom" />
-    <item android:id="@+id/about"
-        android:icon="@android:drawable/ic_input_add"
-        android:title="About Me" />
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/about"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="About Me"
+        app:showAsAction="always" />
 </menu>
