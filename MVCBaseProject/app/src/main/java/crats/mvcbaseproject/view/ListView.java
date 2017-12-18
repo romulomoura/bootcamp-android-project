@@ -26,6 +26,7 @@ public class ListView extends AppCompatActivity {
     public static android.widget.ListView list_view;
     private ArrayList<String> mListview = new ArrayList<String>();
 
+
     ArrayAdapter<String> myArrayAdapter;
 
     String total = "";
@@ -37,6 +38,8 @@ public class ListView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listviewactivity);
+
+
 
 
 
@@ -56,7 +59,7 @@ public class ListView extends AppCompatActivity {
         final DatabaseReference databaseReference = database.getReference().child("primarydatabase");
 
 
-        Query query = databaseReference.orderByChild("qrcode").equalTo(total);
+       Query query = databaseReference.orderByChild("qrcode").equalTo(total);
 
         query.addValueEventListener(new ValueEventListener()
         {
