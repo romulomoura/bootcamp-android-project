@@ -2,6 +2,7 @@ package crats.mvcbaseproject.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -75,26 +76,41 @@ public class ListView extends AppCompatActivity {
 
 
 
-                String myChildValues = "";
-                int a = 0;
-                int count = 1;
-                for(DataSnapshot snapshot : dataSnapshot.getChildren())
-                {
-                    myChildValues = snapshot.child("review").getValue(String.class);
-                    mListview.add(myChildValues);
-                    myArrayAdapter.notifyDataSetChanged();
+    String myChildValues = "";
+    int a = 0;
+    int count = 0;
+    for (DataSnapshot snapshot : dataSnapshot.getChildren())
+    {
+        myChildValues = snapshot.child("review").getValue(String.class);
+        mListview.add(myChildValues);
+        myArrayAdapter.notifyDataSetChanged();
 
-                    String progress = snapshot.child("progress").getValue(String.class);
-                    int b = Integer.parseInt(progress);
-                    a = a + b;
-                    count++;
-                    String prname = snapshot.child("productName").getValue(String.class);
-                    prname1.setText(prname);
-                }
+        String progress = snapshot.child("progress").getValue(String.class);
+        int b = Integer.parseInt(progress);
+        a = a + b;
+        count++;
+        String prname = snapshot.child("productName").getValue(String.class);
+        prname1.setText(prname);
+    }
 
-                int c = a/count;
 
-                ratingBar1.setProgress(c);
+    try {
+        int c = a / count;
+        ratingBar1.setProgress(c);
+    }
+    catch(Exception e)
+    {
+
+        ratingBar1.setVisibility(View.INVISIBLE);
+        mListview.add("Sorry,");
+        mListview.add("No Review for this item.");
+        myArrayAdapter.notifyDataSetChanged();
+
+    }
+
+
+                //ratingBar1.setProgress(c);
+
 
 
 
