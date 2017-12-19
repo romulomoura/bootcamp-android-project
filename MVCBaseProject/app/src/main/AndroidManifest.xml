@@ -28,7 +28,9 @@
             android:parentActivityName=".view.ProjectLists" />
         <activity android:name=".view.YoginMain" />
         <activity android:name=".view.PostListActivity" />
-        <activity android:name=".view.AddPostActivity"></activity>
+        <activity android:name=".view.AddPostActivity" />
+        <activity android:name=".view.CreateAccountActivity" />
+        <activity android:name=".view.SplashScreen"></activity>
     </application>
 
 </manifest>

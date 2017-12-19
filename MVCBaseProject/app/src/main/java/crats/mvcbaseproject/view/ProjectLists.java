@@ -56,7 +56,7 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 1 :
-                Intent intent1 = new Intent(this,YoginMain.class);
+                Intent intent1 = new Intent(this,SplashScreen.class);
                 startActivity(intent1);
                 break;
             default:
