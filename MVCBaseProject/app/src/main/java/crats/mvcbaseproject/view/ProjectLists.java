@@ -13,12 +13,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import crats.mvcbaseproject.R;
-import crats.mvcbaseproject.view.PersonNamesListScreen;
 
 public class ProjectLists extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     ListView projectlistView;
-    String [] projectList = {"ProDigi"};
+    String [] projectList = {"ProDigi", "Anthony"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +52,10 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
         switch(position){
             case 0:
                 Intent intent = new Intent(this, PersonNamesListScreen.class);
+                startActivity(intent);
+                break;
+            case 1:
+                intent = new Intent(this, MovieListActivity.class);
                 startActivity(intent);
                 break;
             default:
