@@ -17,7 +17,7 @@ import crats.mvcbaseproject.R;
 public class ProjectLists extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     ListView projectlistView;
-    String [] projectList = {"ProDigi", "Anthony"};
+    String [] projectList = {"ProDigi", "Anthony", "yogin"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,14 +55,15 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 1:
-                intent = new Intent(this, MovieListActivity.class);
+                Intent intent = new Intent(this, MovieListActivity.class);
                 startActivity(intent);
+                break;
+            case 2:
+                Intent intent1 = new Intent(this,SplashScreen.class);
+                startActivity(intent1);
                 break;
             default:
                 setContentView(R.layout.project_lists);
         }
-
-
-
     }
 }

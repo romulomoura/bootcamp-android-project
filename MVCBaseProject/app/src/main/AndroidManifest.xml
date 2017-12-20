@@ -27,12 +27,18 @@
             android:name=".view.PersonNamesListScreen"
             android:label="Example"
             android:parentActivityName=".view.ProjectLists" />
-        <activity
-            android:name=".view.MovieListActivity"
-            android:parentActivityName=".view.ProjectLists" />
-        <activity
-            android:name=".view.MovieDetailActivity"
-            android:parentActivityName=".view.MovieListActivity"></activity>
+            <activity android:name=".view.YoginMain" />
+            <activity android:name=".view.PostListActivity" />
+            <activity android:name=".view.AddPostActivity" />
+            <activity android:name=".view.CreateAccountActivity" />
+            <activity android:name=".view.SplashScreen"></activity>
+            <activity
+                android:name=".view.MovieListActivity"
+                android:parentActivityName=".view.ProjectLists" />
+            <activity
+                android:name=".view.MovieDetailActivity"
+                android:parentActivityName=".view.MovieListActivity">
+            </activity>
     </application>
 
 </manifest>
