@@ -1,4 +1,4 @@
-package crats.mvcbaseproject;
+package crats.mvcbaseproject.view;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,10 +12,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import crats.mvcbaseproject.R;
+
 public class ProjectLists extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     ListView projectlistView;
-    String [] projectList = {"ProDigi"};
+    String [] projectList = {"ProDigi", "Anthony", "Yash", "yogin"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,8 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
             public View getView(int position, View convertView, ViewGroup parent) {
                 TextView textView = (TextView) super.getView(position, convertView, parent);
                 textView.setTextColor(Color.BLACK);
-                textView.setGravity(Gravity.CENTER);return textView;
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         };
         projectlistView.setOnItemClickListener(this);
@@ -52,11 +55,20 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
                 Intent intent = new Intent(this, PersonNamesListScreen.class);
                 startActivity(intent);
                 break;
+            case 1:
+                Intent intent = new Intent(this, MovieListActivity.class);
+                startActivity(intent);
+                break;
+            case 2:
+                Intent intentyash = new Intent(this, FirstScreen.class);
+                startActivity(intentyash);
+                break;
+            case 3:
+                Intent intent1 = new Intent(this,SplashScreen.class);
+                startActivity(intent1);
+                break;
             default:
                 setContentView(R.layout.project_lists);
         }
-
-
-
     }
 }

@@ -1,6 +1,8 @@
-package crats.mvcbaseproject;
+package crats.mvcbaseproject.controller;
 
 import java.util.ArrayList;
+
+import crats.mvcbaseproject.model.Person;
 
 /**
  * Created by Victor on 2017-11-15.
