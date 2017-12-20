@@ -13,12 +13,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import crats.mvcbaseproject.R;
-import crats.mvcbaseproject.view.PersonNamesListScreen;
 
 public class ProjectLists extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     ListView projectlistView;
-    String [] projectList = {"ProDigi","Yash"};
+    String [] projectList = {"ProDigi", "Anthony", "Yash", "yogin"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +56,19 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 1:
+                Intent intent = new Intent(this, MovieListActivity.class);
+                startActivity(intent);
+                break;
+            case 2:
                 Intent intentyash = new Intent(this, FirstScreen.class);
                 startActivity(intentyash);
+                break;
+            case 3:
+                Intent intent1 = new Intent(this,SplashScreen.class);
+                startActivity(intent1);
                 break;
             default:
                 setContentView(R.layout.project_lists);
         }
-
-
-
     }
 }
