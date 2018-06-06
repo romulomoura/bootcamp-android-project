@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/cast_expanded_controller_background_color">
+    android:layout_height="match_parent">
 
     <ListView
         android:id="@+id/listview2"
@@ -71,7 +70,6 @@
         android:layout_marginStart="72dp"
 
         android:isIndicator="true"
-        android:background="@color/cast_expanded_controller_progress_text_color"
         app:layout_constraintBottom_toTopOf="@+id/listview2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

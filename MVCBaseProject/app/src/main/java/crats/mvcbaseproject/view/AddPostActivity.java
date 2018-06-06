@@ -130,7 +130,8 @@ public class AddPostActivity extends AppCompatActivity
                      @Override
                      public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                          Uri downloadurl = taskSnapshot.getDownloadUrl();
+
+                          Uri downloadurl = taskSnapshot.getUploadSessionUri();
 
                          DatabaseReference newPost = mPostDatabase.push();
 

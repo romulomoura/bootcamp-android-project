@@ -12,24 +12,32 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import crats.mvcbaseproject.R;
 
 public class ProjectLists extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     ListView projectlistView;
-    String [] projectList = {"ProDigi", "Anthony", "Yash", "yogin"};
+    ArrayList<String> projectList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.project_lists);
 
-       this.setupListView();
+        projectList.add("ProDigi");
+        projectList.add("Anthony");
+        projectList.add("Yash");
+        projectList.add("Yogin");
 
+        // TODO: Step 1. Add your name on projectList array
+        // Example:
+        // projectList.add(<<Your Name>>);
 
+        this.setupListView();
     }
 
-
+    // Do not change this method
     private void setupListView(){
         projectlistView = (ListView) findViewById(R.id.projectListView);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getBaseContext(),android.R.layout.simple_list_item_1,this.projectList){
@@ -43,20 +51,18 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
         };
         projectlistView.setOnItemClickListener(this);
         projectlistView.setAdapter(adapter);
-
-
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        Intent intent;
         switch(position){
             case 0:
-                Intent intent = new Intent(this, PersonNamesListScreen.class);
+                intent = new Intent(this, PersonNamesListScreen.class);
                 startActivity(intent);
                 break;
             case 1:
-                Intent intent = new Intent(this, MovieListActivity.class);
+                intent = new Intent(this, MovieListActivity.class);
                 startActivity(intent);
                 break;
             case 2:
@@ -66,6 +72,13 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
             case 3:
                 Intent intent1 = new Intent(this,SplashScreen.class);
                 startActivity(intent1);
+                break;
+            case 4:
+                // TODO: Step 2. Add your activity screen here.
+                // Example:
+
+                // intent = new Intent(this, <<Your Activity Name>>.class);
+                // startActivity(intent);
                 break;
             default:
                 setContentView(R.layout.project_lists);
