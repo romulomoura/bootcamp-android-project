@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/objectListView"
-    tools:context="crats.mvcbaseproject.PersonNamesListScreen">
+    tools:context="crats.mvcbaseproject.view.PersonNamesListScreen">
 
 
     <ListView

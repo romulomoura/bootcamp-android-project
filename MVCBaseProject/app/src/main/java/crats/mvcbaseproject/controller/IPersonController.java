@@ -1,4 +1,4 @@
-package crats.mvcbaseproject;
+package crats.mvcbaseproject.controller;
 
 import java.util.ArrayList;
 

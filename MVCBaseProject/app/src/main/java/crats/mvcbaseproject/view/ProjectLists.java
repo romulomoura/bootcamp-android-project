@@ -1,4 +1,4 @@
-package crats.mvcbaseproject;
+package crats.mvcbaseproject.view;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import crats.mvcbaseproject.R;
 
 public class ProjectLists extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
@@ -25,6 +26,7 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.project_lists);
 
         projectList.add("ProDigi");
+        projectList.add("Anthony");
 
         // TODO: Step 1. Add your name on projectList array
         // Example:
@@ -57,11 +59,15 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 1:
+                intent = new Intent(this, MovieListActivity.class);
+                startActivity(intent);
+                break;
+            case 2:
                 // TODO: Step 2. Add your activity screen here.
                 // Example:
+
                 // intent = new Intent(this, <<Your Activity Name>>.class);
                 // startActivity(intent);
-
                 break;
         }
     }
