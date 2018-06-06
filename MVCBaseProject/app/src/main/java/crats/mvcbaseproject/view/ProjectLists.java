@@ -27,6 +27,8 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
 
         projectList.add("ProDigi");
         projectList.add("Anthony");
+        projectList.add("Yash");
+        projectList.add("Yogin");
 
         // TODO: Step 1. Add your name on projectList array
         // Example:
@@ -43,7 +45,8 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
             public View getView(int position, View convertView, ViewGroup parent) {
                 TextView textView = (TextView) super.getView(position, convertView, parent);
                 textView.setTextColor(Color.BLACK);
-                textView.setGravity(Gravity.CENTER);return textView;
+                textView.setGravity(Gravity.CENTER);
+                return textView;
             }
         };
         projectlistView.setOnItemClickListener(this);
@@ -63,12 +66,22 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 2:
+                Intent intentyash = new Intent(this, FirstScreen.class);
+                startActivity(intentyash);
+                break;
+            case 3:
+                Intent intent1 = new Intent(this,SplashScreen.class);
+                startActivity(intent1);
+                break;
+            case 4:
                 // TODO: Step 2. Add your activity screen here.
                 // Example:
 
                 // intent = new Intent(this, <<Your Activity Name>>.class);
                 // startActivity(intent);
                 break;
+            default:
+                setContentView(R.layout.project_lists);
         }
     }
 }
