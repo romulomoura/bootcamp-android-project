@@ -8,9 +8,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Android Studio 3.1.2
-Gradle Version 4.4
-Java Version 8 Update 171 (build 1.8.0_171
+* Android Studio 3.1.2
+* Gradle Version 4.4
+* Java Version 8 Update 171 (build 1.8.0_171
 
 ## Authors
 
