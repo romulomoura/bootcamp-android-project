@@ -14,15 +14,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class PersonNamesListScreen extends AppCompatActivity implements AdapterView.OnItemClickListener,IPersonController {
 
     ListView customObjectlistView;
-
+    
     ArrayList<String> PersonNamesList = new ArrayList<String>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,6 @@ public class PersonNamesListScreen extends AppCompatActivity implements AdapterV
 
         PersonController.shared().setupPersonController(this, this.getBaseContext());
         PersonController.shared().fetchList();
-
     }
 
     private void setupListView(){
@@ -49,8 +48,6 @@ public class PersonNamesListScreen extends AppCompatActivity implements AdapterV
         };
         customObjectlistView.setOnItemClickListener(this);
         customObjectlistView.setAdapter(adapter);
-
-
     }
 
 
@@ -69,12 +66,11 @@ public class PersonNamesListScreen extends AppCompatActivity implements AdapterV
         list = PersonController.shared().getListOfObject();
 
         for (int i = 0; i <list.size() ; i++) {
-         name = list.get(i).getFullName();
-
+            name = list.get(i).getFullName();
             personList_name.add(name);
         }
 
-            return personList_name;
+        return personList_name;
     }
 
 
@@ -94,14 +90,13 @@ public class PersonNamesListScreen extends AppCompatActivity implements AdapterV
 
     @Override
     public void fetchPersonSuccess() {
-
         PersonNamesList = this.getPersonsList();
         this.setupListView();
     }
 
     @Override
     public void fetchPersonFailure(String errorMessage) {
-
+        Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show();
     }
 
 }
