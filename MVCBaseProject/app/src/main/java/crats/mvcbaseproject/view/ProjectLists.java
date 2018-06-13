@@ -29,6 +29,8 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
         projectList.add("Anthony");
         projectList.add("Yash");
         projectList.add("Yogin");
+        //Romulo´s Project
+        projectList.add("Romulo");
 
         // TODO: Step 1. Add your name on projectList array
         // Example:
@@ -76,10 +78,14 @@ public class ProjectLists extends AppCompatActivity implements AdapterView.OnIte
             case 4:
                 // TODO: Step 2. Add your activity screen here.
                 // Example:
-
                 // intent = new Intent(this, <<Your Activity Name>>.class);
                 // startActivity(intent);
+
+                // Currency converter
+                Intent intentRomulo = new Intent(this,CurrencyConverter.class);
+                startActivity(intentRomulo);
                 break;
+
             default:
                 setContentView(R.layout.project_lists);
         }

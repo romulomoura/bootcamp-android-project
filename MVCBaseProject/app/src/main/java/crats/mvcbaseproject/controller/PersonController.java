@@ -31,6 +31,8 @@ public class PersonController implements IPersonApi {
     private IPersonController iPersonController = null;
 
     private final String url = "https://randomuser.me/api/?results=25";
+    //private final String url = "http://www.apilayer.net/api/live?access_key=25909e9d9afaaacab8414001382d37b5";
+
     private RequestQueue requestQueue = null;
 
     private PersonController() {
@@ -84,7 +86,8 @@ public class PersonController implements IPersonApi {
     }
 
     private JsonObjectRequest fetchPersonRequest(){
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+        JsonObjectRequest jsonObjectRequest;
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
                 url,
 
                 new Response.Listener<JSONObject>() {
